@@ -32,10 +32,10 @@ func main() {
 	}
 
 	time.Sleep(*delay)
-
+	
+	currentlyAlloced := 0
 	for i := 0; ; i++ {
-		runtime.GC()
-		currentlyAlloced := 0
+		runtime.GC()	
 		fmt.Printf("==[Round %d (current allocation: %dMB)]========================================\n", i, currentlyAlloced)
 
 		fmt.Printf("--[/proc/self/status]-----------------------------------------------------------\n")
